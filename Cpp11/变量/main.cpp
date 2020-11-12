@@ -47,6 +47,10 @@ namespace TEMP_VAR {
         base.Bar();
     }
 
+    void _gao(Base* base) {
+        base->Bar();
+    }
+
     void main() {
         proc(); // 返回值是一个临时变量，在下一行就被销毁。
 
@@ -66,21 +70,21 @@ namespace TEMP_VAR {
         }
 
         {
-
-            // Base ref1 = GetBase();
-            // Base ref2 = GetDerOne();
-            // Base ref3 = GetDerTwo();
-
             gao(GetBase());
             gao(GetDerOne());
             gao(GetDerTwo());
-            // c&onst Base& ref1 = GetBase();
-            // const Base& ref2 = GetDerOne();
-            // const Base& ref3 = GetDerTwo();
 
-            // ref1.Bar();
-            // ref2.Bar();
-            // ref3.Bar();
+            gao(Base());
+            gao(DerOne());
+            gao(DerTwo());
+
+            Base* base = new Base;
+            DerOne* derOne = new DerOne;
+            DerTwo* derTwo = new DerTwo;
+
+            _gao(dynamic_cast<Base*>(base));
+            _gao(dynamic_cast<Base*>(derOne));
+            _gao(dynamic_cast<Base*>(derTwo));
         }
     }
     
