@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// 类
 class A
 {
 private:
     const int a;                // 常对象成员，只能在初始化列表赋值
-
 public:
     // 构造函数
     A() : a(0) { };
@@ -18,8 +15,7 @@ public:
     int getValue() const;       // 常成员函数，不得修改类中的任何数据成员的值
 };
 
-void function()
-{
+void function() {
     // 对象
     A b;                        // 普通对象，可以调用全部成员函数、更新常成员变量
     const A a;                  // 常对象，只能调用常成员函数
