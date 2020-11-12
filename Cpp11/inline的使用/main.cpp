@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 // 声明1（加 inline，建议使用）
 inline int functionName(int first, int second,...);
 
@@ -16,4 +19,10 @@ class A {
 class A {
     int doA();
 }
+
 inline int A::doA() { return 0; }   // 需要显式内联
+
+int main() {
+
+    return 0;
+}
