@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class A
-{
+class A {
 private:
     const int a;                // 常对象成员，只能在初始化列表赋值
 public:
