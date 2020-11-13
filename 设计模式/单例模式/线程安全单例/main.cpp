@@ -13,8 +13,8 @@ class Singleton {
      * operator.
      */
 private:
-    static Singleton * pinstance_;
-    static std::mutex mutex_;
+    static Singleton* pinstance_;
+    static mutex mutex_;
 
 protected:
     Singleton(const string value): value_(value) {}
@@ -37,7 +37,7 @@ public:
      * object stored in the static field.
      */
 
-    static Singleton *GetInstance(const std::string& value);
+    static Singleton *GetInstance(const string& value);
     /**
      * Finally, any singleton should define some business logic, which can be
      * executed on its instance.
@@ -56,7 +56,7 @@ public:
  */
 
 Singleton* Singleton::pinstance_{nullptr};
-std::mutex Singleton::mutex_;
+mutex Singleton::mutex_;
 
 /**
  * The first time we call GetInstance we will lock the storage location
@@ -64,7 +64,7 @@ std::mutex Singleton::mutex_;
  *      set the value. RU:
  */
 Singleton *Singleton::GetInstance(const std::string& value) {
-    std::lock_guard<std::mutex> lock(mutex_);
+    lock_guard<mutex> lock(mutex_);
     if (pinstance_ == nullptr) {
         pinstance_ = new Singleton(value);
     }
