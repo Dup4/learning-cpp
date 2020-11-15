@@ -29,3 +29,7 @@
 
 - weak_ptr 是用来解决 shared_ptr 相互引用时的死锁问题, 如果说两个 shared_ptr 相互引用, 那么这两个指针的引用计数永远不可能下降为 0,资源永远不会释放。
 - 它是对对象的一种弱引用，不会增加对象的引用计数，和 shared_ptr 之间可以相互转化，shared_ptr 可以直接赋值给它，它可以通过调用 lock 函数来获得 shared_ptr。
+
+## Reference
+
+[C++11 智能指针](https://www.jianshu.com/p/e4919f1c3a28)

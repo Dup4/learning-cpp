@@ -23,6 +23,8 @@ private:
     string str;
 };
 
+// c++98 标准
+// C++11 舍弃
 namespace AUTO_PTR {
     void main() {
         auto_ptr<Test> ptest(new Test("123"));
@@ -114,8 +116,11 @@ namespace WEAK_PTR {
         cout << pb.use_count() << endl;
         cout << pa.use_count() << endl;
 
-        shared_ptr<B> _pb(new B());
-        shared_ptr<A> _pa(new A());
+        shared_ptr<_B> _pb(new _B());
+        shared_ptr<_A> _pa(new _A());
+
+        _pb->pa_ = _pa;
+        _pa->pb_ = _pb;
         
         cout << _pb.use_count() << endl;
         cout << _pa.use_count() << endl;

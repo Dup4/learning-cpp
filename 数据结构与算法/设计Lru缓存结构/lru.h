@@ -4,9 +4,11 @@ using namespace std;
 
 struct LruCache {
     struct ListNode {
+        static int ptrCnt; 
         int key, val;
         shared_ptr<ListNode> pre, nx;
-        ListNode(int key = 0, int val = 0) : key(key), val(val) { pre = nx = nullptr; }
+        ListNode(int key = 0, int val = 0) : key(key), val(val) { pre = nx = nullptr; ++ptrCnt; }
+        ~ListNode() { --ptrCnt; }
     };
     map <int, shared_ptr<ListNode> > mp;
     shared_ptr<ListNode> head, tail;
