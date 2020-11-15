@@ -22,6 +22,29 @@ struct Node {
 //静态
 int Node::a = 0;
 
+struct Foo {
+    struct Bar {
+        static int a;
+        void add() {
+            ++a;
+            cout << a << endl;
+        }
+        static void _add() {
+            ++a;
+            cout << a << endl;
+        }
+    }bar;
+    void add() {
+        ++Bar::a;
+        cout << Bar::a << endl;
+    }
+    static void _add() {
+        ++Bar::a;
+        cout << Bar::a << endl;
+    }
+};
+int Foo::Bar::a = 0;
+
 int main() {
     foo();
     foo();
@@ -30,5 +53,10 @@ int main() {
     node.add();
     node._add();
     Node::_add();
+    Foo _foo = Foo();
+    _foo.add();
+    _foo._add();
+    _foo.bar.add();
+    _foo.bar._add();
     return 0;
 }
