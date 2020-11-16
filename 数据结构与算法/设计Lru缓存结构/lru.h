@@ -8,9 +8,12 @@ struct LruCache {
         int key, val;
         shared_ptr<ListNode> pre, nx;
         ListNode(int key = 0, int val = 0) : key(key), val(val) { pre = nx = nullptr; ++ptrCnt; }
-        ~ListNode() { --ptrCnt; }
+        ~ListNode() {
+            --ptrCnt; 
+            pre.reset();
+            nx.reset();
+        }
     };
-    int ListNode::ptrCnt(0);
     map <int, shared_ptr<ListNode> > mp;
     shared_ptr<ListNode> head, tail;
     size_t k;
@@ -20,6 +23,15 @@ struct LruCache {
         head->nx = tail;
         tail->pre = head;
         this->k = k;
+    }
+    ~LruCache() {
+        head.reset();
+        tail.reset();
+        for (auto &it : mp) {
+            cout << it.second.use_count() << endl;
+            it.second.reset();
+        }
+        mp.clear();
     }
     void set(int key, int value) {
         shared_ptr<ListNode> tmp(new ListNode(key, value));
@@ -56,6 +68,7 @@ struct LruCache {
         cout << endl;
     }
 };
+int LruCache::ListNode::ptrCnt = 0;
 
 class Solution {
 public:
@@ -66,15 +79,17 @@ public:
      * @return int整型vector
      */
     vector<int> LRU(vector<vector<int> >& operators, int k) {
-        LruCache lruCache = LruCache(static_cast<size_t>(k));
+        shared_ptr<LruCache> lruCache(new LruCache(static_cast<size_t>(k)));
         vector <int> res;
         for (auto &op: operators) {
             if (op[0] == 1) {
-                lruCache.set(op[1], op[2]);
+                lruCache->set(op[1], op[2]);
             } else {
-                res.push_back(lruCache.get(op[1]));
+                res.push_back(lruCache->get(op[1]));
             }
         }
+        lruCache.reset();
+        cout << LruCache::ListNode::ptrCnt << endl;
         return res;
     }
 };
