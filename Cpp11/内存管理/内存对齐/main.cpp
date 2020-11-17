@@ -21,10 +21,21 @@ struct D {
     short c;
 };
 
+class _A {
+    char a;
+};
+
+class _B {
+    char a;
+    int b;
+};
+
 int main() {
     cout << sizeof(A) << endl;
     cout << sizeof(B) << endl;
     cout << sizeof(C) << endl;
     cout << sizeof(D) << endl;
+    cout << sizeof(_A) << endl;
+    cout << sizeof(_B) << endl;
     return 0;
 }
