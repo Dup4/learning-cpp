@@ -15,6 +15,7 @@ void Producer(int ix) {
         ++sze;
         producerId = (producerId + 1) % cap;
         cout << "生产者 " << ix << " 生产了一个产品, 当前产品数量为: " << sze << endl;
+        cout.flush();
         lock.unlock();
         cond_var.notify_all();
         this_thread::sleep_for(chrono::milliseconds(1000));
@@ -28,6 +29,7 @@ void Customer(int ix) {
         --sze;
         customerId = (customerId + 1) % cap;
         cout << "消费者 " << ix << " 消费了一个产品, 当前产品数量为: " << sze << endl;
+        cout.flush();
         lock.unlock();
         cond_var.notify_all();
         this_thread::sleep_for(chrono::milliseconds(1000));
@@ -39,8 +41,6 @@ int main() {
     for (int i = 0; i < cap; ++i) {
         producerVec.push_back(thread(Producer, i));
         customerVec.push_back(thread(Customer, i));
-        producerVec.back().join();
-        customerVec.back().join();
     }
     for (int i = 0; i < cap; ++i) {
         producerVec[i].join();
