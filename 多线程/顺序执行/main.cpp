@@ -7,13 +7,15 @@ int num = 0;
 
 void out(char ch) {
     int n = ch - 'A';
-    for (int i = 0; i < 10; ++i) {
+    while (true) {
         unique_lock<mutex> lock(_mutex);
-        cond_var.wait(lock, [n]{return n == num;});
+        cond_var.wait(lock, [=]{return n == num;});
         cout << ch;
+        cout.flush();
         num = (num + 1) % 3;
         lock.unlock();
         cond_var.notify_all();
+        this_thread::sleep_for(chrono::milliseconds(1000));
     }
 }
 
