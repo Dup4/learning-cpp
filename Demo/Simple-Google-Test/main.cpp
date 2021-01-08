@@ -1,5 +1,7 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
 #include "gtest.h"
+
 using ll = long long;
 using db = double;
 using namespace std;

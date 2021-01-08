@@ -1,6 +1,7 @@
-
 #ifndef __GTEST_H__
 #define __GTEST_H__
+
+#include <cstdio>
 
 #define COLOR(color, msg) "\033[0:1;" #color "m" msg "\033[0m"
 #define RED(msg)    COLOR(31, msg)
