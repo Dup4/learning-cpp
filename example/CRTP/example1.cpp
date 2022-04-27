@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -37,9 +38,14 @@ void f(const Base& b) {
 
 int main() {
     Derived d;
+
     d.Show();
 
     f(d);
+
+    vector<Base*> v;
+    v.push_back(&d);
+    v[0]->Show();
 
     return 0;
 }
