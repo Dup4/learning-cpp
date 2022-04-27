@@ -14,4 +14,7 @@
         "--clang-tidy",
         "--pch-storage=memory",
     ],
+    "cSpell.words": [
+        "noreply"
+    ],
 }
