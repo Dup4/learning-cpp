@@ -10,6 +10,6 @@ public:
 
 int main() {
     A *a = new A();
-    A *_a = (A*)(malloc(sizeof(A)));
+    A *_a = (A *)(malloc(sizeof(A)));
     return 0;
 }

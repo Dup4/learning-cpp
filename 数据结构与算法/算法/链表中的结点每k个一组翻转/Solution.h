@@ -14,16 +14,17 @@ class Solution {
         }
         return length;
     }
-    
+
 public:
     /**
-     * 
-     * @param head ListNode类 
-     * @param k int整型 
+     *
+     * @param head ListNode类
+     * @param k int整型
      * @return ListNode类
      */
-    ListNode* reverseKGroup(ListNode* head, int k) {
-        if (head == nullptr || head->next == nullptr || k == 1) return head;
+    ListNode *reverseKGroup(ListNode *head, int k) {
+        if (head == nullptr || head->next == nullptr || k == 1)
+            return head;
         ListNode *res = new ListNode(0);
         res->next = head;
         ListNode *pre = res, *cur = head, *tmp = nullptr;

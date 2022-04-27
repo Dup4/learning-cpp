@@ -6,9 +6,9 @@ public:
      * @return int整型vector
      */
     vector<int> getMinStack(vector<vector<int> >& op) {
-        vector <int> res;
-        stack <int> sta[2];
-        for (auto &it : op) {
+        vector<int> res;
+        stack<int> sta[2];
+        for (auto& it : op) {
             if (it[0] == 1) {
                 sta[0].push(it[1]);
                 int Min = it[1];

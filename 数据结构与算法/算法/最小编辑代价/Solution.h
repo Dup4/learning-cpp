@@ -12,7 +12,7 @@ public:
     int minEditCost(string str1, string str2, int ic, int dc, int rc) {
         int len1 = static_cast<int>(str1.size());
         int len2 = static_cast<int>(str2.size());
-        vector <vector<int>> f(len1 + 1, vector<int>(len2 + 1, 0x3f3f3f3f));
+        vector<vector<int>> f(len1 + 1, vector<int>(len2 + 1, 0x3f3f3f3f));
         f[0][0] = 0;
         for (int i = 1; i <= len1; ++i) f[i][0] = i * dc;
         for (int i = 1; i <= len2; ++i) f[0][i] = i * ic;

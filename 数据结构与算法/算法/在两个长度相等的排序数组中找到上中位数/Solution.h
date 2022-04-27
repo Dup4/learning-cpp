@@ -12,8 +12,8 @@ public:
         int res = 0;
         while (l <= r) {
             int mid = (l + r) >> 1;
-            if (mid == n - 1) 
-                return min(arr1[n - 1],arr2[0]);
+            if (mid == n - 1)
+                return min(arr1[n - 1], arr2[0]);
             if (arr1[mid] == arr2[n - mid - 2])
                 return arr1[mid];
             if (arr1[mid] < arr2[n - mid - 2]) {

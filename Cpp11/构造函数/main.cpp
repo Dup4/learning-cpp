@@ -27,12 +27,13 @@ public:
     }
 
     void printT() {
-        cout <<" x = " << m_x << "  y = " << m_y <<endl;
+        cout << " x = " << m_x << "  y = " << m_y << endl;
     }
 
     ~Test() {
-        cout << "~Test()..." <<endl;
+        cout << "~Test()..." << endl;
     }
+
 private:
     int m_x;
     int m_y;
@@ -43,19 +44,19 @@ private:
 
 //场景1
 void test1() {
-    Test t1(10,20);
+    Test t1(10, 20);
     Test t2(t1);
 }
 
 //场景2
 void test2() {
-    Test t1(10,20);
+    Test t1(10, 20);
     Test t2;
-    t2 = t1;//=操作符
+    t2 = t1;  //=操作符
 }
 
-//Test t = t1;
-//Test的拷贝构造函数
+// Test t = t1;
+// Test的拷贝构造函数
 void func(Test t) {
     cout << "func begin..." << endl;
     t.printT();
@@ -65,14 +66,14 @@ void func(Test t) {
 //场景3
 void test3() {
     cout << "test3 begin..." << endl;
-    Test t1(10,20);
+    Test t1(10, 20);
     func(t1);
     cout << "test3 end..." << endl;
 }
 
 Test func2() {
     cout << "func2 begin..." << endl;
-    Test temp(10,20);
+    Test temp(10, 20);
     temp.printT();
     cout << "func2 end..." << endl;
     return temp;
@@ -102,7 +103,7 @@ void test5() {
 //场景6
 void test6() {
     cout << "test6 begin..." << endl;
-    Test t1; //初始化t1
+    Test t1;  //初始化t1
     t1 = func2();
     t1.printT();
     //先析构temp，后析构匿名对象,再后析构t1

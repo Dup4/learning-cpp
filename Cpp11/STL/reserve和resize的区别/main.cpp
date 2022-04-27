@@ -7,14 +7,14 @@ void output(const vector<int> &vec) {
 }
 
 int main() {
-    vector <int> vec;
+    vector<int> vec;
 
     output(vec);
-    
+
     vec.push_back(1);
 
     output(vec);
-    
+
     vec.push_back(1);
 
     output(vec);

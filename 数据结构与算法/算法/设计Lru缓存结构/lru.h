@@ -7,14 +7,17 @@ struct LruCache {
         static int ptrCnt;
         int key, val;
         shared_ptr<ListNode> pre, nx;
-        ListNode(int key = 0, int val = 0) : key(key), val(val) { pre = nx = nullptr; ++ptrCnt; }
+        ListNode(int key = 0, int val = 0) : key(key), val(val) {
+            pre = nx = nullptr;
+            ++ptrCnt;
+        }
         ~ListNode() {
-            --ptrCnt; 
+            --ptrCnt;
             pre.reset();
             nx.reset();
         }
     };
-    map <int, shared_ptr<ListNode> > mp;
+    map<int, shared_ptr<ListNode> > mp;
     shared_ptr<ListNode> head, tail;
     size_t k;
     LruCache(size_t k) {
@@ -48,7 +51,8 @@ struct LruCache {
         }
     }
     int get(int key) {
-        if (mp.count(key) == 0) return -1;
+        if (mp.count(key) == 0)
+            return -1;
         shared_ptr<ListNode> p = mp[key];
         p->pre->nx = p->nx;
         p->nx->pre = p->pre;
@@ -78,10 +82,10 @@ public:
      * @param k int整型 the k
      * @return int整型vector
      */
-    vector<int> LRU(vector<vector<int> >& operators, int k) {
+    vector<int> LRU(vector<vector<int> > &operators, int k) {
         shared_ptr<LruCache> lruCache(new LruCache(static_cast<size_t>(k)));
-        vector <int> res;
-        for (auto &op: operators) {
+        vector<int> res;
+        for (auto &op : operators) {
             if (op[0] == 1) {
                 lruCache->set(op[1], op[2]);
             } else {

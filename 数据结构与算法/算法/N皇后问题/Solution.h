@@ -8,12 +8,12 @@ class Solution {
                     if (g[i][j] == 1) {
                         if (i == x)
                             return false;
-                        if (j == y) 
+                        if (j == y)
                             return false;
                         if (i + j == x + y)
                             return false;
                         if (i - j == x - y)
-                            return false;					
+                            return false;
                     }
                 }
             }
@@ -33,14 +33,15 @@ class Solution {
             }
         }
     }
+
 public:
     /**
-     * 
+     *
      * @param n int整型 the n
      * @return int整型
      */
     int Nqueen(int n) {
-        vector <int> res({0, 1,0,0,2,10,4,40,92,352,724,2680,14200,73712,365596});
+        vector<int> res({0, 1, 0, 0, 2, 10, 4, 40, 92, 352, 724, 2680, 14200, 73712, 365596});
         return res[n];
     }
 };

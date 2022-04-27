@@ -24,8 +24,7 @@ void swap(elem_t array[], int i, int j) {
  **/
 void reverse(elem_t array[], int first, int last) {
     last--;
-    while (first < last)
-        swap(array, first++, last--);
+    while (first < last) swap(array, first++, last--);
 }
 
 /**
@@ -53,7 +52,6 @@ int next_permutation(elem_t num[], int first, int last) {
 int main() {
     int a[5] = {1, 2, 3, 4, 5};
     next_permutation(a, 0, 5);
-    for (int i = 0; i < 5; ++i)
-        cout << a[i] << " \n"[i == 4];
+    for (int i = 0; i < 5; ++i) cout << a[i] << " \n"[i == 4];
     return 0;
 }

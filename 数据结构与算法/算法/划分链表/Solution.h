@@ -4,18 +4,20 @@ using namespace std;
 struct ListNode {
     int val;
     ListNode *next;
-    ListNode(int val = 0) : val(val) { next = nullptr; }
+    ListNode(int val = 0) : val(val) {
+        next = nullptr;
+    }
 };
 
-class Solution {    
+class Solution {
 public:
     /**
-     * 
-     * @param head ListNode类 
-     * @param x int整型 
+     *
+     * @param head ListNode类
+     * @param x int整型
      * @return ListNode类
      */
-    ListNode* partition(ListNode* head, int x) {
+    ListNode *partition(ListNode *head, int x) {
         ListNode *pSmall = nullptr, *pSmallHead = nullptr;
         ListNode *pLarge = nullptr, *pLargeHead = nullptr;
         while (head != nullptr) {
@@ -34,8 +36,10 @@ public:
             }
             head = head->next;
         }
-        if (pLarge != nullptr) pLarge->next = nullptr;
-        if (pSmallHead == nullptr) return pLargeHead;
+        if (pLarge != nullptr)
+            pLarge->next = nullptr;
+        if (pSmallHead == nullptr)
+            return pLargeHead;
         pSmall->next = pLargeHead;
         return pSmallHead;
     }

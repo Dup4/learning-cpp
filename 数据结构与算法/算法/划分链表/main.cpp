@@ -4,9 +4,10 @@ using namespace std;
 
 int main() {
     ListNode *p = nullptr, *head = nullptr;
-    vector <int> vec({1, 4, 3, 2, 5, 2});
+    vector<int> vec({1, 4, 3, 2, 5, 2});
     for (auto &it : vec) {
-        if (!p) head = p = new ListNode(it);
+        if (!p)
+            head = p = new ListNode(it);
         else {
             p->next = new ListNode(it);
             p = p->next;

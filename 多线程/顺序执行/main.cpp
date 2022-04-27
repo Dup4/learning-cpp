@@ -9,7 +9,9 @@ void out(char ch) {
     int n = ch - 'A';
     while (true) {
         unique_lock<mutex> lock(_mutex);
-        cond_var.wait(lock, [=]{return n == num;});
+        cond_var.wait(lock, [=] {
+            return n == num;
+        });
         cout << ch;
         cout.flush();
         num = (num + 1) % 3;

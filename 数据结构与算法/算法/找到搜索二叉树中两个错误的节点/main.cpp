@@ -9,7 +9,7 @@
 class Solution {
 public:
     /**
-     * 
+     *
      * @param root TreeNode类 the root
      * @return int整型vector
      */
@@ -17,16 +17,18 @@ public:
     TreeNode* fi;
     TreeNode* se;
     void dfs(TreeNode* rt) {
-        if (!rt) return;
+        if (!rt)
+            return;
         dfs(rt->left);
         if (pre && pre->val >= rt->val) {
-            if (!fi) fi = pre;
+            if (!fi)
+                fi = pre;
             se = rt;
         }
         pre = rt;
         dfs(rt->right);
     }
-    
+
     vector<int> findError(TreeNode* root) {
         // write code here
         pre = nullptr;

@@ -10,7 +10,10 @@ void foo() {
 struct Node {
     static int a;
     int b;
-    void add() { ++a; cout << a << endl; }
+    void add() {
+        ++a;
+        cout << a << endl;
+    }
     // static 函数只能访问 类内 static 变量
     static void _add() {
         static int b = 0;
@@ -33,7 +36,7 @@ struct Foo {
             ++a;
             cout << a << endl;
         }
-    }bar;
+    } bar;
     void add() {
         ++Bar::a;
         cout << Bar::a << endl;

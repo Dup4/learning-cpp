@@ -1,1 +1,3 @@
-int _c() { return 2 * 3; }
+int _c() {
+    return 2 * 3;
+}

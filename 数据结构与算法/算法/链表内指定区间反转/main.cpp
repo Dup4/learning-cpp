@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     ListNode *p = new ListNode(0), *head = p;
-    vector <int> vec({1, 2, 3, 4, 5});
+    vector<int> vec({1, 2, 3, 4, 5});
     for (auto &it : vec) {
         head->next = new ListNode(0);
         head = head->next;

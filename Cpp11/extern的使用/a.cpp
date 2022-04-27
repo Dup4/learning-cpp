@@ -7,7 +7,6 @@ void func() {
     cout << "hello world\n";
 }
 
-
 class Foo {
 public:
     Foo() {

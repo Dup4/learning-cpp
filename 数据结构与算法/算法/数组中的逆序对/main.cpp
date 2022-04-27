@@ -1,20 +1,28 @@
 struct Hash {
-    vector <int> a;
-    int size() { return static_cast<int>(a.size()); }
+    vector<int> a;
+    int size() {
+        return static_cast<int>(a.size());
+    }
     void work() {
         sort(a.begin(), a.end());
         a.erase(unique(a.begin(), a.end()), a.end());
     }
-    void add(int x) { a.push_back(x); }
+    void add(int x) {
+        a.push_back(x);
+    }
     int get(int x) {
-        return static_cast<int>(lower_bound(a.begin(), a.end(), x) - a.begin()) + 1; 
+        return static_cast<int>(lower_bound(a.begin(), a.end(), x) - a.begin()) + 1;
     }
 };
 
 struct BIT {
-    vector <int> a;
-    BIT(int n) { a = vector<int>(n, 0); }
-    int size() { return static_cast<int>(a.size()); }
+    vector<int> a;
+    BIT(int n) {
+        a = vector<int>(n, 0);
+    }
+    int size() {
+        return static_cast<int>(a.size());
+    }
     void add(int x, int v) {
         for (; x < size(); x += x & -x) {
             a[x] += v;
@@ -28,7 +36,8 @@ struct BIT {
         return res;
     }
     int get(int l, int r) {
-        if (l > r) return 0;
+        if (l > r)
+            return 0;
         return get(r) - get(l - 1);
     }
 };

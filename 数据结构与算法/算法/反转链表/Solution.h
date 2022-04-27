@@ -1,15 +1,16 @@
 /*
 struct ListNode {
-	int val;
-	struct ListNode *next;
-	ListNode(int x) :
-			val(x), next(NULL) {
-	}
+        int val;
+        struct ListNode *next;
+        ListNode(int x) :
+                        val(x), next(NULL) {
+        }
 };*/
 class Solution {
 public:
     ListNode* ReverseList(ListNode* pHead) {
-        if (pHead == nullptr) return pHead;
+        if (pHead == nullptr)
+            return pHead;
         ListNode* pre = nullptr;
         ListNode* cur = pHead;
         while (pHead->next != nullptr) {

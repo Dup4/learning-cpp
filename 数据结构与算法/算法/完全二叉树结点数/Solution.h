@@ -18,9 +18,11 @@ class Solution {
         }
         return h;
     }
+
 public:
-    int nodeNum(TreeNode* head) {
-        if (head == nullptr) return 0;
+    int nodeNum(TreeNode *head) {
+        if (head == nullptr)
+            return 0;
         int leftH = getH(head->left);
         int rightH = getH(head->right);
         if (leftH == rightH + 1) {

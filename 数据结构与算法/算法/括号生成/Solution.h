@@ -15,14 +15,15 @@ class Solution {
             str.pop_back();
         }
     }
+
 public:
     /**
-     * 
-     * @param n int整型 
+     *
+     * @param n int整型
      * @return string字符串vector
      */
     vector<string> generateParenthesis(int n) {
-        vector <string> res;
+        vector<string> res;
         dfs(res, "", 0, n, 0, n * 2);
         return res;
     }

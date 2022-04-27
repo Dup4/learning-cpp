@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 union UnionTest {
-    UnionTest() : i(10) {};
+    UnionTest() : i(10){};
     int i;
     double d;
 };
@@ -26,7 +26,7 @@ int main() {
     std::cout << ::i << std::endl;  // 输出全局静态匿名联合的 20
 
     i = 30;
-    std::cout << i << std::endl;    // 输出局部匿名联合的 30
+    std::cout << i << std::endl;  // 输出局部匿名联合的 30
 
     return 0;
 }

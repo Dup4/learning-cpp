@@ -8,10 +8,12 @@ public:
      * @return int整型
      */
     int solve(int n, int k) {
-        if (k == 1) return n;
+        if (k == 1)
+            return n;
         int log = static_cast<int>(floor(log2(n))) + 1;
-        if (k >= log) return log;
-        vector <int>f(k + 1, 0);
+        if (k >= log)
+            return log;
+        vector<int> f(k + 1, 0);
         int res = 0;
         while (f[k] < n) {
             ++res;
