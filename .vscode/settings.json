@@ -15,6 +15,7 @@
         "--pch-storage=memory",
     ],
     "cSpell.words": [
+        "CRTP",
         "noreply"
     ],
 }
