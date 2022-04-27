@@ -1,5 +1,17 @@
 {
-    "editor.formatOnSave": true,
     "editor.tabSize": 4,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.trimAutoWhitespace": true,
+    "clangd.arguments": [
+        "--background-index",
+        "--header-insertion=iwyu",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--cross-file-rename",
+        "--enable-config",
+        "--pretty",
+        "--clang-tidy",
+        "--pch-storage=memory",
+    ],
 }
