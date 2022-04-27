@@ -5,5 +5,6 @@ CompileFlags:
         - -std=c++20
         - -DLOCAL
         - --target=x86_64-x86_64-clang++
-        - --include-directory=/usr/local/opt/llvm/include
-    Compiler: /usr/local/opt/llvm/bin/g++
+        - --include-directory=/usr/local/opt/gcc/include/c++/11
+        - --include-directory=/usr/local/opt/gcc/include/c++/11/x86_64-apple-darwin21
+    Compiler: /usr/local/opt/llvm/bin/clang++

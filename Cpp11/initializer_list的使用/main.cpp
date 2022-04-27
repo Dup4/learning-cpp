@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 template <class T>
 struct S {
     std::vector<T> v;
