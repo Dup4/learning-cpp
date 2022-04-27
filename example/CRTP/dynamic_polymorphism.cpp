@@ -4,14 +4,14 @@ using namespace std;
 
 class Base {
 public:
-    void Show() const {
+    virtual void Show() const {
         cout << "Base" << endl;
     }
 };
 
 class Derived : public Base {
 public:
-    void Show() const {
+    void Show() const override {
         Base::Show();
         cout << "Derived" << endl;
     }
