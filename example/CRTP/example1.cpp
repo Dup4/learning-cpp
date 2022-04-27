@@ -31,14 +31,15 @@ private:
     }
 };
 
-void f(Base* b) {
-    b->Show();
+void f(const Base& b) {
+    b.Show();
 }
 
 int main() {
     Derived d;
     d.Show();
-    f(&d);
+
+    f(d);
 
     return 0;
 }
