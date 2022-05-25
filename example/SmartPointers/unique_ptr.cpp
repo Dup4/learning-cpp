@@ -25,6 +25,9 @@ void bar() {
     auto b_ptr = std::unique_ptr<Foo>(b);
 
     auto c = std::unique_ptr<Foo>(std::move(a));
+
+    auto* d = new Foo(3);
+    std::unique_ptr<Foo> d_ptr{d};
 }
 
 int main() {

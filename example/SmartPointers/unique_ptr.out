@@ -1,5 +1,7 @@
 1 is constructed
 2 is constructed
+3 is constructed
+3 is destructed
 1 is destructed
 2 is destructed
 main endl
