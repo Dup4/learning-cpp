@@ -12,7 +12,8 @@ int main() {
 
     {
         string s = "b";
-        foo(s);
+        string_view t = s;
+        foo(t);
     }
 
     return 0;
