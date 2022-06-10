@@ -1,0 +1,17 @@
+A	1A
+B	1B
+C	1C
+tmp::A	N3tmp1AE
+tmp::B	N3tmp1BE
+tmp::C	N3tmp1CE
+a	1A
+b	1B
+c	1C
+a_ptr	P1A
+b_ptr	P1B
+c_ptr	P1C
+A*	P1A
+B*	P1B
+C*	P1C
+static_cast<A&>(b)	1B
+reinterpret_cast<A*>(b_ptr)	P1A
