@@ -1,0 +1,4 @@
+bool: true
+int: 2
+double: 2.000000
+string: hello dynamic reflection
