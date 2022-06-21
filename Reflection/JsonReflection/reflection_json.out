@@ -1,0 +1,25 @@
+{
+  "_nested": {
+    "_bool": false,
+    "_double": 0.0,
+    "_int": 0,
+    "_optional": null,
+    "_string": "foo"
+  },
+  "_vector": [
+    {
+      "_bool": true,
+      "_double": 1.0,
+      "_int": 1,
+      "_optional": true,
+      "_string": "bar"
+    },
+    {
+      "_bool": true,
+      "_double": 2.0,
+      "_int": 2,
+      "_optional": false,
+      "_string": "baz"
+    }
+  ]
+}
