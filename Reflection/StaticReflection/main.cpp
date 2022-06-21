@@ -60,8 +60,9 @@ int main() {
     ForEachField(s, GenericFunctor{/* ... context data */});
 
     ForEachField(s, overload(
-                            [](bool field, const char* name) {
+                            [](bool& field, const char* name) {
                                 std::cout << "b " << std::boolalpha << name << ": " << field << std::endl;
+                                field = false;
                             },
                             [](int field, const char* name) {
                                 std::cout << "i " << name << ": " << field << std::endl;
@@ -72,6 +73,8 @@ int main() {
                             [](const std::string& field, const char* name) {
                                 std::cout << "s " << name << ": " << field.c_str() << std::endl;
                             }));
+
+    std::cout << s.bool_ << std::endl;
 
     return 0;
 }

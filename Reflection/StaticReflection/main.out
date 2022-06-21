@@ -10,3 +10,4 @@ b bool: true
 i int: 1
 d double: 1.000000
 s string: hello static reflection
+false
