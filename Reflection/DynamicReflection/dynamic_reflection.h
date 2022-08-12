@@ -36,8 +36,9 @@ template <class StructType>
 class StructValueConverter {
 public:
     template <typename FieldType>
-    void RegisterField(FieldType StructType::*field_pointer, const std::string& field_name,
-            ValueConverter<FieldType> value_converter) {
+    void RegisterField(FieldType StructType::*field_pointer,
+                       const std::string& field_name,
+                       ValueConverter<FieldType> value_converter) {
         fields_.push_back(std::make_unique<FieldConverter<StructType, FieldType>>(
                 field_name, field_pointer, std::move(value_converter)));
     }
