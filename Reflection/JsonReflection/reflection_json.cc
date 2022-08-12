@@ -59,9 +59,12 @@ struct NestedStruct {
     std::vector<SimpleStruct> vector_;
 };
 
-DEFINE_STRUCT_SCHEMA(SimpleStruct, DEFINE_STRUCT_FIELD(bool_, "_bool"), DEFINE_STRUCT_FIELD(int_, "_int"),
-        DEFINE_STRUCT_FIELD(double_, "_double"), DEFINE_STRUCT_FIELD(string_, "_string"),
-        DEFINE_STRUCT_FIELD(optional_, "_optional"));
+DEFINE_STRUCT_SCHEMA(SimpleStruct,
+                     DEFINE_STRUCT_FIELD(bool_, "_bool"),
+                     DEFINE_STRUCT_FIELD(int_, "_int"),
+                     DEFINE_STRUCT_FIELD(double_, "_double"),
+                     DEFINE_STRUCT_FIELD(string_, "_string"),
+                     DEFINE_STRUCT_FIELD(optional_, "_optional"));
 
 DEFINE_STRUCT_SCHEMA(NestedStruct, DEFINE_STRUCT_FIELD(nested_, "_nested"), DEFINE_STRUCT_FIELD(vector_, "_vector"));
 
@@ -88,7 +91,7 @@ int main() {
                                   "    \"_optional\": false"
                                   "  }]"
                                   "}")
-                                 .get<NestedStruct>())
+                              .get<NestedStruct>())
                          .dump(2)
               << std::endl;
 

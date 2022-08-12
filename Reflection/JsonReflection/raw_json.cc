@@ -68,7 +68,7 @@ int main() {
                                   "    \"_optional\": false"
                                   "  }]"
                                   "}")
-                                 .get<NestedStruct>())
+                              .get<NestedStruct>())
                          .dump(2)
               << std::endl;
 
