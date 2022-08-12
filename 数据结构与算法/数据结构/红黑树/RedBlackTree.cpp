@@ -186,7 +186,7 @@ private:
                 rotate_right(p->sibling());
         }
         if (p->parent->color == BLACK && p->sibling()->color == BLACK && p->sibling()->leftTree->color == BLACK &&
-                p->sibling()->rightTree->color == BLACK) {
+            p->sibling()->rightTree->color == BLACK) {
             p->sibling()->color = RED;
             delete_case(p->parent);
         } else if (p->parent->color == RED && p->sibling()->color == BLACK && p->sibling()->leftTree->color == BLACK &&
@@ -196,7 +196,7 @@ private:
         } else {
             if (p->sibling()->color == BLACK) {
                 if (p == p->parent->leftTree && p->sibling()->leftTree->color == RED &&
-                        p->sibling()->rightTree->color == BLACK) {
+                    p->sibling()->rightTree->color == BLACK) {
                     p->sibling()->color = RED;
                     p->sibling()->leftTree->color = BLACK;
                     rotate_right(p->sibling()->leftTree);

@@ -64,7 +64,9 @@ void main() {
             [](auto a) {
                 cout << a;
             },
-            3, 4.0, "5");  // 345
+            3,
+            4.0,
+            "5");  // 345
     forArgs([](auto a) {
         cout << a;
     });  // 空操作
